@@ -1,0 +1,19 @@
+# 配置应用名称
+spring:
+  application:
+    name: eureka2
+# 注册管理中心端口
+server:
+  port: 8763
+
+# 配置eureka客户端
+eureka:
+  instance:
+    hostname: eureka-cluster2
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka-cluster1:8762/eureka/,http://eureka-cluster3:8764/eureka/
+
+spring.cloud.config.discovery.enable: true
